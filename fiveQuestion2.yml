@@ -1,9 +1,8 @@
---- 
-- name: Ansible with Linux  
+---
+- name: Ansible with Linux
   hosts: node1
   become: true
-  tasks:  
-
+  tasks:
     - name: Create Database
       postgresql_db:
         name: mydatabase
