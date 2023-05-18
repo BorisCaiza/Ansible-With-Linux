@@ -4,8 +4,11 @@
   become: true
   tasks:
 
-  - name: Habilitar y activar el servicio de PostgreSQL
-    service:
-      name: postgresql
-      state: started
-      enabled: true
+    - name: Inicializar directorio de datos de PostgreSQL
+      command: /usr/bin/postgresql-setup --initdb
+
+    - name: Habilitar y activar el servicio de PostgreSQL
+      service:
+        name: postgresql
+        state: started
+        enabled: true

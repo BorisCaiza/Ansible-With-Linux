@@ -3,12 +3,16 @@
   hosts: node1
   become: true
   tasks:  
-  - name: Install Postgress    
+  - name: Update packages    
     yum:
       name: '*'
       state: latest
 
   - name: Install Postgress
     yum:
-      name: postgresql-server
+      name: "{{ item }}"
       state: present
+    loop:
+      - postgresql
+      - postgresql-contrib
+      - postgresql-server
