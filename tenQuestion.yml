@@ -1,0 +1,9 @@
+---
+- name: Ansible with Linux
+  hosts: node1
+  become: true
+
+  tasks:
+    - name: Reboot Server
+        reboot:
+        reboot_timeout: 300
