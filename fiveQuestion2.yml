@@ -4,12 +4,12 @@
   hosts: node1
   become: true
   collections:
-  
+
     - community.postgresql
 
   tasks:
     - name: Create Database
-      community.postgresql.postgresql_db:
+      postgresql_db:
         name: mydatabase
         state: present
       become_user: postgres
