@@ -4,6 +4,7 @@
   hosts: node1
   become: true
   collections:
+  
     - community.postgresql
 
   tasks:
