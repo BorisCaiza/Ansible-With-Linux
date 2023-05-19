@@ -1,0 +1,18 @@
+---
+- name: Ansible with Linux
+  hosts: node1
+  gather_facts: true
+  become: true
+  collections:
+    - community.postgresql
+  tasks:
+    - name: Grant some_user access to some_db, comment that and keep other rule-specific comments attached to their rules
+      community.postgresql.postgresql_pg_hba:
+        dest: /var/lib/pgsql/data/pg_hba.conf
+        contype: host
+        users: Boris
+        databases: mydatabase
+        method: md5
+        source: all
+        keep_comments_at_rules: true
+        comment: "Available connection md5 for Botis to mydatabase"

@@ -1,6 +1,7 @@
 --- 
 - name: Ansible with Linux  
   hosts: node1
+  gather_facts: false
   become: true
   tasks:  
   - name: Update packages    
