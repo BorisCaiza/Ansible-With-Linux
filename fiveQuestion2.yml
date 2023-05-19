@@ -7,8 +7,11 @@
     - community.postgresql
 
   tasks:
-    - name: Create Database
-      postgresql_db:
+    - name: Create a new database with name "acme" and specific encoding and locale # settings
+      community.postgresql.postgresql_db:
         name: mydatabase
-        state: present
+        encoding: UTF-8
+        lc_collate: de_DE.UTF-8
+        lc_ctype: de_DE.UTF-8
+        template: template0
       become_user: postgres
