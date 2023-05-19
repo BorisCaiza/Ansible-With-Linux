@@ -1,7 +1,11 @@
 ---
+
 - name: Ansible with Linux
   hosts: node1
   become: true
+  collections:
+    - community.postgresql
+
   tasks:
     - name: Create Database
       community.postgresql.postgresql_db:
