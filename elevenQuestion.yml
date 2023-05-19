@@ -1,6 +1,6 @@
 ---
 - name: Ansible with Linux  
-  hosts: localhost
+  hosts: node1
   gather_facts: true
   become: true
 
@@ -11,7 +11,7 @@
 
     - name: Reboot Server
       reboot:
-      
+
 
     - name: Change the hostname
       hostname:
